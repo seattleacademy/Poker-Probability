@@ -1,0 +1,41 @@
+body {
+  background: #339900; }
+
+.container {
+  margin: 0 auto;
+  width: 1000px; }
+
+#deckCont {
+  float: right; }
+
+span {
+  display: block; }
+
+header {
+  height: 70px;
+  border-bottom: 1px solid gray;
+  margin: 0 0 0;
+  background-color: #fff; }
+  header #desc {
+    font-size: 45px; }
+
+.card {
+  border: 1px solid black;
+  width: 120px;
+  height: 160px;
+  text-align: center;
+  padding: 5px;
+  margin: 10px;
+  color: #cc0033;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px #000;
+  border-radius: 5px; }
+  .card .back {
+    content: url("../images/card-back2.jpg");
+    margin: -5px 0 0 -5px; }
+
+.top {
+  text-align: left; }
+
+.bottom {
+  text-align: right; }
