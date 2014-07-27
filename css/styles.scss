@@ -1,23 +1,30 @@
 $primary-color: #333;
 
-body{
+html, body{
   background:#339900;
 }
-.container{
-  margin:0 auto;
-  width:1000px;
-}
 #oppHandCont{
-  
+  text-align:center;
 }
-#deckCont{
+#communityCont{
   float:right;
+  .col-md-2{
+    margin-right:10px;
+  }
 }
 #yourHandCont{
-  
+  text-align:center;
+}
+#actionsCont{
+  text-align:center;
 }
 span{
   display:block;
+}
+.col-md-8{
+	.row{
+	  margin-bottom:100px;
+	}
 }
 header{
   height:70px;
@@ -38,7 +45,7 @@ header{
   margin:10px;
   color:#cc0033;
   background-color:#fff;
-  box-shadow:2px 2px 2px #000;
+  box-shadow:5px 5px 5px #505050;
   border-radius:5px;
   
   .back{
