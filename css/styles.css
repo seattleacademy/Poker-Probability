@@ -18,7 +18,7 @@ html, body {
 span {
   display: block; }
 
-.col-md-8 .row {
+.col-md-8 .row:nth-child(-n+2) {
   margin-bottom: 100px; }
 
 header {
@@ -39,7 +39,8 @@ header {
   color: #cc0033;
   background-color: #fff;
   box-shadow: 5px 5px 5px #505050;
-  border-radius: 5px; }
+  border-radius: 5px;
+  cursor: default; }
   .card .back {
     content: url("../images/card-back2.jpg");
     margin: -5px 0 0 -5px; }

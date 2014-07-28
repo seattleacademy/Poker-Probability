@@ -17,12 +17,13 @@ html, body{
 }
 #actionsCont{
   text-align:center;
+  
 }
 span{
   display:block;
 }
 .col-md-8{
-	.row{
+	.row:nth-child(-n+2){
 	  margin-bottom:100px;
 	}
 }
@@ -47,6 +48,7 @@ header{
   background-color:#fff;
   box-shadow:5px 5px 5px #505050;
   border-radius:5px;
+  cursor:default;
   
   .back{
 	content:url("../images/card-back2.jpg");
