@@ -7,15 +7,23 @@
   
   <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/apprise-v2.css" type="text/css">
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="js/playingCards.js"></script>
+  <script src="js/apprise-v2.js"></script>
+  
 </head>
 
 <body>
-  <div class="col-md-2" style="background-color:#92b2b2; box-shadow:5px 5px 5px #505050;">
-	<div class="row">
+  <header>
+	<div class="menu">
+	  <span id="about">About</span>
+	</div>
+  </header>
+  <div class="col-md-3" id="leftPanel">
+	<div class="row" id="actionsPanel">
 	  <div id="actionsCont">
-	    <h3>Actions</h3>
+	    <div id="actionsHeader">Actions</div>
 	    <button class="btn" type="button" id="shuffle">Shuffle Deck</button>
         <button class="btn" type="button" id="draw">Draw a Card</button>
         <!--<input type="button" id="returnCard" value="Return Card" />-->
@@ -25,9 +33,24 @@
 	    </div>-->
 		
 		<div id="deck"></div>
-		
+		Cards left: <span id="cardCount">52</span>
 	  </div>
 	</div>
+	
+	<div class="row" id="mathPanel">
+	  <div id="mathCont">
+	    <div id="mathHeader">
+		  <span id="mathHeaderText">Probabilities</span>
+		</div>
+		
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+		standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a 
+		type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+		essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+		and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	  </div>
+	</div>
+	
   </div>
   
   <div class="col-md-8">
@@ -44,11 +67,13 @@
 		  </div>
 	    </div>
 	    <div class="col-md-1">
-		  <div class="card">
+		  <div class="oppCardTwo">
+		    <div class="card">
 			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
 			  <h1 class="cardSuit"></h1>
 			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
 			</div>
+		  </div>
 	    </div>
 	  </div>
 	</div>

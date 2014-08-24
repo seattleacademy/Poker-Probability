@@ -27,15 +27,25 @@ span{
 	  margin-bottom:100px;
 	}
 }
-header{
-  height:70px;
-  border-bottom:1px solid gray;
-  margin:0 0 0;
-  background-color:#fff;
- 
-  #desc{
-    font-size:45px;
+.menu{
+  float:right;
+  font-size:18px;
+  margin:10px 20px;
+  font-weight:bold;
+  
+  span{
+    color:#fff;
+	text-decoration:none;
+	cursor:pointer;
+	
+	&:hover{
+	  color:#64a2f4;
+	}
   }
+}
+header{
+  height:45px;
+  background-color:#1A2125;
 }
 .card{
   border:1px solid black;
@@ -60,4 +70,49 @@ header{
 }
 .bottom{
   text-align:right;
+}
+
+#deck{
+  margin:20px;
+}
+
+#cardCount{
+  display:inline;
+}
+#leftPanel{
+  background-color:#FFFFFF;
+  color:#333;
+}
+
+#actionsPanel{
+  margin-bottom:20px;
+  height:405px;
+}
+#actionsHeader{
+  background-color:#F1F1F1;
+  font-size:18px;
+  margin-bottom:15px;
+  border-bottom:1px solid #e0e0e0;
+  padding:5px;
+  color:#878787;
+}
+#mathPanel{
+   background-color: #f0faff;
+   border-top: 1px solid #c5dfea;
+   border-bottom: 1px solid #c5dfea;
+}
+#mathHeader{
+  font-size:18px;
+  color:#878787;
+  top: -1em;
+  left: -.65em;
+  text-align:center;
+  position:relative;
+  
+}
+#mathHeaderText{
+  display:inline-block;
+  border:1px solid #929292;
+  padding:3px 7px;
+  background-color:#fff;
 }

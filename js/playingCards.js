@@ -3,8 +3,8 @@ $(function () {
 	var suitArray = ["♦","♥","♠","♣"];
     var cardBack = "images/card-back-sm";
     var deckOfCards = [];
-    var i, j;
-	var suit;
+    var i, j, suit;
+	var cardsInDeck = 52;
 	
 	for(j = 0; j <= 3; j++) {
 		suit = suitArray[j];
@@ -30,32 +30,39 @@ $(function () {
             deckOfCards[toSwap] = tempCard;
         }
     }
-	
 	shuffle();
 	
 	function drawCard(){
-	  var cardsInDeck = 52;
-	  
-	  /*$.each(deckOfCards, function(){
-	    console.log("Value: " + this.value);
-		console.log("Suit: " + this.suit);*/
-		
-		if(deckOfCards[0].suit === "♠" || deckOfCards[0].suit === "♣"){
-		  $(".cardSuit").css('color', 'black');
-		  $(".cardValue").css('color', 'black');
+		if(cardsInDeck == 52){
+		  Apprise("The deck is empty!");
 		}
-		else {
-		  $(".cardSuit").css('color', '#cc0033');
-		  $(".cardValue").css('color', '#cc0033');
+		else{
+			cardsInDeck -= 1;
+			$("#cardCount").text(cardsInDeck);
+			
+			if(deckOfCards[0].suit === "♠" || deckOfCards[0].suit === "♣"){
+			  $(".cardSuit").css('color', 'black');
+			  $(".cardValue").css('color', 'black');
+			}
+			else {
+			  $(".cardSuit").css('color', '#cc0033');
+			  $(".cardValue").css('color', '#cc0033');
+			}
+			$('[class=cardValue]').text(deckOfCards[0].value);
+			$('[class=cardSuit]').text(deckOfCards[0].suit);
+
+		  $("#deck img:first-child").remove();
+		  var shifted = deckOfCards.shift();
+		  console.log(shifted);
 		}
-	    $('[class=cardValue]').text(deckOfCards[0].value);
-	    $('[class=cardSuit]').text(deckOfCards[0].suit);
-	  //});
-	  var shifted = deckOfCards.shift();
-	  console.log(shifted);
-	  cardsInDeck - 1;
 	}
 	
+	function about(){
+	  Apprise("About Page");
+	}
+	
+	$("#about").on('click', about);
 	$("#shuffle").on('click', shuffle);
 	$("#draw").on('click', drawCard);
+	
 });
