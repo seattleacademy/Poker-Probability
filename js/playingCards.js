@@ -3,27 +3,29 @@ $(function () {
 	var suitArray = ["♦","♥","♠","♣"];
     var cardBack = "images/card-back-sm";
     var deckOfCards = [];
-    var i, j, suit;
-	var cardsInDeck = 52;
+    var i, j;
+	var cardsInDeck = 52; 
+	var communityArray = [];
+	var communityCount = 0;
 	
-	for(j = 0; j <= 3; j++) {
-		suit = suitArray[j];
+	//fills array with random cards and appends images
+	for(j = 0; j <= suitArray.length-1; j++) {
 		for (i = 0; i <= valueArray.length-1; i++) {
 			deckOfCards.push({
 				value:valueArray[i],
-				suit:suit
+				suit:suitArray[j]
 			});
 			$("#deck").append("<img src=" + cardBack + ".jpg>");
 		}
 	}
     
-    var theLength = deckOfCards.length - 1;
+    var deckLength = deckOfCards.length - 1;
     var toSwap;
     var tempCard;
 
     function shuffle() {
         //console.log(deckOfCards);
-        for (i = theLength; i > 0; i--) {
+        for (i = deckLength; i > 0; i--) {
             toSwap = Math.floor(Math.random() * i);
             tempCard = deckOfCards[i];
             deckOfCards[i] = deckOfCards[toSwap];
@@ -32,35 +34,52 @@ $(function () {
     }
 	shuffle();
 	
+	function initialDraw(){
+		if(deckOfCards[0].suit === "♠" || deckOfCards[0].suit === "♣"){
+		  $(".cardSuit").css('color', 'black');
+		  $(".cardValue").css('color', 'black');
+		}
+		else {
+		  $(".cardSuit").css('color', '#cc0033');
+		  $(".cardValue").css('color', '#cc0033');
+		}
+		$('.cardValue').text(deckOfCards[0].value);
+		$('.cardSuit').text(deckOfCards[0].suit);	
+	}
+	
+	function setCard(){
+		
+	}
+	
 	function drawCard(){
-		if(cardsInDeck == 52){
+		if(cardsInDeck === 0){
 		  Apprise("The deck is empty!");
 		}
 		else{
 			cardsInDeck -= 1;
-			$("#cardCount").text(cardsInDeck);
+			$("#cardCount").text(cardsInDeck); //changes text of number of cards left
 			
-			if(deckOfCards[0].suit === "♠" || deckOfCards[0].suit === "♣"){
-			  $(".cardSuit").css('color', 'black');
-			  $(".cardValue").css('color', 'black');
+			if(communityCount != 5){  //if community is not full
+				communityArray.push({
+					suit:deckOfCards[0].suit,
+					value:deckOfCards[0].value
+				});
+				//alert(communityArray[communityCount].suit + communityArray[communityCount].value); //alerts community cards
+				communityCount++;
 			}
-			else {
-			  $(".cardSuit").css('color', '#cc0033');
-			  $(".cardValue").css('color', '#cc0033');
-			}
-			$('[class=cardValue]').text(deckOfCards[0].value);
-			$('[class=cardSuit]').text(deckOfCards[0].suit);
-
-		  $("#deck img:first-child").remove();
-		  var shifted = deckOfCards.shift();
-		  console.log(shifted);
+		  $("#deck img:first-child").remove(); //removes card image
+		  console.log(deckOfCards.shift()); //removes card from array and logs removed card
 		}
 	}
 	
+	function rules(){
+	  Apprise();
+	}
 	function about(){
-	  Apprise("About Page");
+	  Apprise("The goal of this website is to just calculate the probability of winning with each draw of a card. I created this as a side project for fun.");
 	}
 	
+	$("#rules").on('click', rules);
 	$("#about").on('click', about);
 	$("#shuffle").on('click', shuffle);
 	$("#draw").on('click', drawCard);

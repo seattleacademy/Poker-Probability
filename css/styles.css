@@ -1,16 +1,18 @@
+@font-face {
+  font-family: otto;
+  src: url("../fonts/Otto.ttf"); }
 html, body {
-  background: #339900; }
+  background: #339900;
+  width: 100%; }
 
-#oppHandCont {
+.handContainer {
   text-align: center; }
 
 #communityCont {
-  float: right; }
+  margin-left: 20%;
+  margin-top: 4%; }
   #communityCont .col-md-2 {
     margin-right: 10px; }
-
-#yourHandCont {
-  text-align: center; }
 
 #actionsCont {
   text-align: center; }
@@ -18,24 +20,29 @@ html, body {
 span {
   display: block; }
 
-.col-md-8 .row:nth-child(-n+2) {
-  margin-bottom: 100px; }
-
 .menu {
   float: right;
   font-size: 18px;
-  margin: 10px 20px;
+  margin: -35px 20px;
   font-weight: bold; }
   .menu span {
     color: #fff;
-    text-decoration: none;
-    cursor: pointer; }
+    cursor: pointer;
+    display: inline;
+    margin-left: 20px; }
     .menu span:hover {
       color: #64a2f4; }
 
 header {
-  height: 45px;
   background-color: #1A2125; }
+
+#site-title {
+  font-family: otto;
+  color: #F1F1F1;
+  font-size: 40px;
+  line-height: 52px;
+  text-align: center;
+  height: 45px; }
 
 .card {
   border: 1px solid black;
@@ -58,6 +65,9 @@ header {
 
 .bottom {
   text-align: right; }
+
+.equal {
+  height: 290px; }
 
 #deck {
   margin: 20px; }

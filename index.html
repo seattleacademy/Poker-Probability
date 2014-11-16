@@ -16,14 +16,18 @@
 
 <body>
   <header>
+	<span id="site-title">PokerProbability</span>
 	<div class="menu">
-	  <span id="about">About</span>
+	  <span class="menu-item" id="rules">Rules</span>
+	  <span class="menu-item" id="about">About</span>
 	</div>
   </header>
   <div class="col-md-3" id="leftPanel">
 	<div class="row" id="actionsPanel">
 	  <div id="actionsCont">
-	    <div id="actionsHeader">Actions</div>
+	    <div id="actionsHeader">
+			Actions
+		</div>
 	    <button class="btn" type="button" id="shuffle">Shuffle Deck</button>
         <button class="btn" type="button" id="draw">Draw a Card</button>
         <!--<input type="button" id="returnCard" value="Return Card" />-->
@@ -48,20 +52,27 @@
 		type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
 		essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
 		and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+		standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a 
+		type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+		essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+		and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+		standard dummy text ever since the 1500s.
+		
 	  </div>
 	</div>
 	
   </div>
   
-  <div class="col-md-8">
-	<div class="row">
-	  <div id="oppHandCont">
+  <div class="col-md-9">
+	<div class="row equal">
+	  <div class="handContainer">
 	    <h3>Opponent's Hand</h3>
 	    <div class="col-sm-1 col-sm-offset-5">
 		  <div class="oppCardOne">
 		    <div class="card">
 			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
-			  <h1 class="cardSuit"></h1>
+			    <h1 class="cardSuit"></h1>
 			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
 			</div>
 		  </div>
@@ -78,62 +89,74 @@
 	  </div>
 	</div>
 	
-	<div class="row">
+	<div class="row equal">
 	  <div id="communityCont">
-		<div class="col-md-2">
-		  <div class="card">
-			<div class="top"><span>A</span><span>&hearts;</span></div>
-			<h1>&hearts;</h1>
-			<div class="bottom"><span>&hearts;</span><span>A</span></div>
+	    <div class="col-md-10">
+	    <div class="col-md-2">
+		  <div class="commCardOne">
+			<div class="card">
+			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
+				<h1 class="cardSuit"></h1>
+			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+			</div>
 		  </div>
 		</div>
 	    <div class="col-md-2">
-		  <div class="card">
-		    <div class="top"><span>A</span><span>&hearts;</span></div>
-		    <h1>&hearts;</h1>
-		    <div class="bottom"><span>&hearts;</span><span>A</span></div>
+		  <div class="commCardTwo">
+			<div class="card">
+			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
+				<h1 class="cardSuit"></h1>
+			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+			</div>
 		  </div>
 	    </div>
 	    <div class="col-md-2">
-		  <div class="card">
-		    <div class="top"><span>A</span><span>&hearts;</span></div>
-		    <h1>&hearts;</h1>
-		    <div class="bottom"><span>&hearts;</span><span>A</span></div>
+		  <div class="commCardThree">
+			<div class="card">
+			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
+				<h1 class="cardSuit"></h1>
+			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+			</div>
 		  </div>
 	    </div>
 	    <div class="col-md-2">
-	  	  <div class="card">
-	  	    <div class="top"><span>A</span><span>&hearts;</span></div>
-		    <h1>&hearts;</h1>
-		    <div class="bottom"><span>&hearts;</span><span>A</span></div>
+	  	  <div class="commCardFour">
+			<div class="card">
+			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
+				<h1 class="cardSuit"></h1>
+			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+			</div>
 		  </div>
 	    </div>
 	    <div class="col-md-2">
-	  	  <div class="card">
-		    <div class="top"><span>A</span><span>&hearts;</span></div>
-		    <h1>&hearts;</h1>
-		    <div class="bottom"><span>&hearts;</span><span>A</span></div>
+	  	  <div class="commCardFive">
+			<div class="card">
+			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
+				<h1 class="cardSuit"></h1>
+			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+			</div>
 		  </div>
 	    </div>
+		</div>
 	  </div>
 	</div>
 	
-	<div class="row">
-	  <div id="yourHandCont">
+	<div class="row equal">
+	  <div class="handContainer">
 	    <h3>Your Hand</h3>
 		  <div class="col-sm-1 col-sm-offset-5">
-		    <div class="card">
-			  <div class="top"><span>A</span><span>&hearts;</span></div>
-			  <h1>&hearts;</h1>
-			  <div class="bottom"><span>&hearts;</span><span>A</span></div>
+		    <div class="myCardOne">
+			  <div class="card">
+			    
+			  </div>
 			</div>
 		  </div>
 		  <div class="col-md-1">
-		    <div class="card">
-			  <div class="top"><span>A</span><span>&hearts;</span></div>
-			  <h1>&hearts;</h1>
-			  <div class="bottom"><span>&hearts;</span><span>A</span></div>
-			</div>
+		    <div class="myCardTwo">
+		      <div class="card">
+			    
+			  </div>
+		    </div>
 		  </div>
 	  </div>
 	</div>

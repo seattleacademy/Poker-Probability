@@ -14,12 +14,12 @@ $(function() {
 	$body = $('body');
 	$window = $(window);
 	
-	$body.append( $overlay.css('opacity', '.8') ).append($Apprise);
+	$body.append( $overlay.css('opacity', '.2') ).append($Apprise);
 });
 
 function Apprise(text, options) {
 	
-	// Restrict blank modals
+	// Restrict blank models
 	if(text===undefined || !text) {
 		return false;
 	}
@@ -33,10 +33,10 @@ function Apprise(text, options) {
 	// Default settings (edit these to your liking)
 	var settings = {
 	
-		animation: 0,	// Animation speed
+		animation: 500,	// Animation speed
 		buttons: {
 			confirm: {
-				action: function() { $me.dissapear(); }, // Callback function
+				action: function() { $me.disappear(); }, // Callback function
 				className: null, // Custom class name(s)
 				id: 'confirm', // Element ID
 				text: 'OK' // Button text
@@ -51,7 +51,7 @@ function Apprise(text, options) {
 	
 	// Close current Apprise, exit
 	if(text=='close') { 
-		$cA.dissapear();
+		$cA.disappear();
 		return;
 	}
 	
@@ -83,7 +83,7 @@ function Apprise(text, options) {
 	};
 	
 	// Close function
-	this.dissapear = function() {
+	this.disappear = function() {
 		
 		$Apprise.animate({
 			top: '-100%'
@@ -118,7 +118,7 @@ function Apprise(text, options) {
 					$("#apprise-btn-" + settings.buttons.cancel.id).trigger('click');
 				} else {
 					
-					$me.dissapear();
+					$me.disappear();
 				}
 			} else if(e.keyCode===13) {
 
@@ -127,11 +127,16 @@ function Apprise(text, options) {
 					$("#apprise-btn-" + settings.buttons.confirm.id).trigger('click');
 				} else {
 					
-					$me.dissapear();
+					$me.disappear();
 				}
 			}
+			
 		});
 	};
+	//click outside to make disappear
+	$('.apprise-overlay').on('click', function(){
+		$me.disappear();
+	});
 	
 	// Add buttons
 	$.each(settings.buttons, function(i, button) {
@@ -159,7 +164,7 @@ function Apprise(text, options) {
 				};
 				
 				button.action( response );
-				//$me.dissapear();
+				//$me.disappear();
 			});
 		}
 	});
