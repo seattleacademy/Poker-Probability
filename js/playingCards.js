@@ -48,21 +48,21 @@ $(function () {
 
 	}
 
+	//draw a card
 	function drawCard(){
 		if(cardsInDeck === 0){
 			Apprise("The deck is empty!");
 			return;
 		}
 		cardsInDeck -= 1; //52 start
-		console.log(cardsInDeck);
 		$("#cardCount").text(cardsInDeck); //changes text of number of cards left
 
-		if(communityCount != 5){  //if community is not full
+		if(communityCount != 5){  //if community is not full, add to community
 			communityArray.push({
 				suit:deckOfCards[0].suit,
 				value:deckOfCards[0].value
 			});
-			//alert(communityArray[communityCount].value + communityArray[communityCount].suit); //alerts community cards
+			//console.log("CA:" + communityArray[communityCount].value + communityArray[communityCount].suit); //alerts community cards
 			communityCount++;
 		}
 	  $("#deck img:first-child").remove(); //removes card image
@@ -72,7 +72,14 @@ $(function () {
 	}
 
 	function rules(){
-	  Apprise();
+	  var rules = "Texas Hold'em Poker\n" +
+								"Glossary:<br>" +
+								"Community Cards - cards in the middle<br>" +
+								"Hole Cards - cards for each player<br>" +
+								"Pre-Flop - <br>" +
+								"The Flop - Reveals 3 community cards<br>"
+								;
+		Apprise(rules);
 	}
 	function about(){
 	  Apprise("The goal of this website is to just calculate the probability of winning with each draw of a card. I created this as a side project for fun.");
