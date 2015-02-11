@@ -20,7 +20,7 @@ $(function () {
 		}
 		shuffle(deckOfCards);
 		//dealCards();
-		rules();
+		//rules();
 	} //init() end
 
 	//shuffles the deck
@@ -40,7 +40,7 @@ $(function () {
 
 		}
 
-	//first draw
+	//
 	function initialDraw(){
 		if(deckOfCards[0].suit === "♠" || deckOfCards[0].suit === "♣"){
 		  $(".cardSuit").css('color', 'black');

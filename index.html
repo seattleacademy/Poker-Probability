@@ -11,7 +11,6 @@
   <script src="js/playingCards.js"></script>
 
 </head>
-
 <body>
   <header>
     <div id="header-cont">
@@ -24,134 +23,203 @@
     </div>
   </header>
   <div class="col-md-3" id="leftPanel">
-	<div class="row" id="actionsPanel">
-	  <div id="actionsCont">
-	    <div id="actionsHeader">
-			     Actions
-		  </div>
-	    <button class="btn" type="button" id="restart">Start Over</button>
-      <button class="btn" type="button" id="draw">Draw a Card</button>
-        <!--<input type="button" id="returnCard" value="Return Card" />-->
+  	<div class="row" id="actionsPanel">
+  	  <div id="actionsCont">
+  	    <div id="actionsHeader">
+  			     Actions
+  		  </div>
+  	    <button class="btn" type="button" id="restart">Start Over</button>
+        <button class="btn" type="button" id="draw">Draw a Card</button>
+          <!--<input type="button" id="returnCard" value="Return Card" />-->
 
-		<!--<div class="card">
-	    	<img class="back"/>
-	    </div>-->
+  		<!--<div class="card">
+  	    	<img class="back"/>
+  	    </div>-->
 
-		<div id="deck"></div>
-		Cards left: <span id="cardCount">52</span>
-	  </div>
-	</div>
+  		<div id="deck"></div>
+  		Cards left: <span id="cardCount">52</span>
+  	  </div>
+  	</div>
 
-	<div class="row" id="mathPanel">
-	  <div id="mathCont">
-	    <div id="mathHeader">
-		  <span id="mathHeaderText">Probabilities</span>
-		</div>
+  	<div class="row" id="mathPanel">
+  	  <div id="mathCont">
+  	    <div id="mathHeader">
+  		  <span id="mathHeaderText">Probabilities</span>
+  		</div>
 
-		<p>Chance of winning: </p>
-    <p>Chance of drawing a red card: </p>
+  		<p>Chance of winning: </p>
+      <p>Chance of drawing a red card: </p>
 
 
-	  </div>
-	</div>
-
-  </div>
+  	  </div>
+  	</div>
+  </div> <!-- left panel end-->
 
   <div class="col-md-9">
-	<div class="row equal">
-	  <div class="handContainer">
-	    <h3>Opponent's Hand</h3>
-	    <div class="col-sm-1 col-sm-offset-5">
-		  <div class="oppCardOne">
-		    <div class="card">
-			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
-			    <h1 class="cardSuit"></h1>
-			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
-			</div>
-		  </div>
-	    </div>
-	    <div class="col-md-1">
-		  <div class="oppCardTwo">
-		    <div class="card">
-			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
-			  <h1 class="cardSuit"></h1>
-			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
-			</div>
-		  </div>
-	    </div>
-	  </div>
-	</div>
+    <div class="row thirds">
+      <h4>Opponent's Hand</h4>
+      <div class="cardSize col-sm-offset-1">
+        <div class="oppCardOne">
+          <div class="card">
+            <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
+              <h1 class="cardSuit"></h1>
+            <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cardSize" style="margin-left:-45px;">
+        <div class="oppCardTwo">
+          <div class="card">
+            <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
+            <h1 class="cardSuit"></h1>
+            <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+          </div>
+        </div>
+      </div>
 
-	<div class="row equal">
+      <div class="cardSize col-sm-offset-1">
+        <div class="oppCardOne">
+          <div class="card">
+            <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
+              <h1 class="cardSuit"></h1>
+            <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cardSize" style="margin-left:-45px;">
+        <div class="oppCardTwo">
+          <div class="card">
+            <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
+            <h1 class="cardSuit"></h1>
+            <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardSize col-sm-offset-1">
+        <div class="oppCardOne">
+          <div class="card">
+            <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
+              <h1 class="cardSuit"></h1>
+            <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cardSize" style="margin-left:-45px;">
+        <div class="oppCardTwo">
+          <div class="card">
+            <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
+            <h1 class="cardSuit"></h1>
+            <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardSize col-sm-offset-1">
+        <div class="oppCardOne">
+          <div class="card">
+            <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
+              <h1 class="cardSuit"></h1>
+            <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cardSize" style="margin-left:-45px;">
+        <div class="oppCardTwo">
+          <div class="card">
+            <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
+            <h1 class="cardSuit"></h1>
+            <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardSize col-sm-offset-1">
+        <div class="oppCardOne">
+          <div class="card">
+            <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
+              <h1 class="cardSuit"></h1>
+            <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cardSize" style="margin-left:-45px;">
+        <div class="oppCardTwo">
+          <div class="card">
+            <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
+            <h1 class="cardSuit"></h1>
+            <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+          </div>
+        </div>
+      </div>
+    </div> <!--row thirds end-->
+
+	<div class="row thirds">
 	  <div id="communityCont">
-	    <div class="col-md-10">
-	    <div class="col-md-2">
-		  <div class="commCardOne">
-			<div class="card">
-			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
-				<h1 class="cardSuit"></h1>
-			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
-			</div>
-		  </div>
-		</div>
-	    <div class="col-md-2">
+	    <div class="cardSize col-sm-offset-4">
+  		  <div class="commCardOne">
+    			<div class="card">
+    			  <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
+    				<h1 class="cardSuit"></h1>
+    			  <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+    			</div>
+  		  </div>
+  		</div>
+      <div class="cardSize">
 		  <div class="commCardTwo">
 			<div class="card">
-			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
+			  <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
 				<h1 class="cardSuit"></h1>
-			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+			  <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
 			</div>
 		  </div>
 	    </div>
-	    <div class="col-md-2">
+      <div class="cardSize">
 		  <div class="commCardThree">
 			<div class="card">
-			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
+			  <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
 				<h1 class="cardSuit"></h1>
-			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+			  <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
 			</div>
 		  </div>
 	    </div>
-	    <div class="col-md-2">
+      <div class="cardSize">
 	  	  <div class="commCardFour">
 			<div class="card">
-			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
+			  <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
 				<h1 class="cardSuit"></h1>
-			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+			  <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
 			</div>
 		  </div>
 	    </div>
-	    <div class="col-md-2">
+      <div class="cardSize">
 	  	  <div class="commCardFive">
 			<div class="card">
-			  <div class="top"><span class="cardValue"></span><span class="cardSuit"></span></div>
+			  <div class="cardTop"><span class="cardValue"></span><span class="cardSuit"></span></div>
 				<h1 class="cardSuit"></h1>
-			  <div class="bottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
+			  <div class="cardBottom"><span class="cardSuit"></span><span class="cardValue"></span></div>
 			</div>
 		  </div>
 	    </div>
-		</div>
 	  </div>
-	</div>
+	</div> <!-- community row thirds end-->
 
-	<div class="row equal">
-	  <div class="handContainer">
-	    <h3>Your Hand</h3>
-		  <div class="col-sm-1 col-sm-offset-5">
+	<div class="row thirds">
+	    <h4>Your Hand</h4>
+      <div class="cardSize col-sm-offset-5">
 		    <div class="myCardOne">
 			  <div class="card">
 
 			  </div>
 			</div>
 		  </div>
-		  <div class="col-md-1">
+      <div class="cardSize" style="margin-left:-45px;">
 		    <div class="myCardTwo">
 		      <div class="card">
 
 			  </div>
 		    </div>
 		  </div>
-	  </div>
 	</div>
   </div>
 </body>
