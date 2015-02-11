@@ -33,10 +33,6 @@ $(function () {
 		return deck;
 	};
 
-		function dealCards(){
-
-		}
-
 		//resets the game
 		function reset(){
 
@@ -61,7 +57,7 @@ $(function () {
 
 	//draw a card
 	function drawCard(){
-		var temp = deckOfCards[0];
+		var nextCard = deckOfCards[0];
 		if(cardsInDeck === 0){
 			alert("The deck is empty!");
 			return;
@@ -70,11 +66,30 @@ $(function () {
 		cardsInDeck -= 1; //52 start
 		$("#cardCount").text(cardsInDeck); //changes text of number of cards left
 
+		function placeCard(yourHand){
+			var suit;
+			var value;
+
+			switch(yourHand[0].suit){
+				case "♠":
+					$('.yourCardOne').html("<img src='images/classic-cards/1.png' alt='card'/>");
+					break;
+				case "♣":
+					break;
+				case "♥":
+					break;
+				case "♦":
+					break;
+				}
+			}
+
 		if(yourHand.length != 2){
 			yourHand.push({
 				suit:deckOfCards[0].suit,
 				value:deckOfCards[0].value
 			})
+			console.log(yourHand[0]);
+			placeCard(yourHand);
 		}
 		//if community is not full and everyone has 2 cards, flop
 		if(yourHand.length == 2 && communityCount != 5){
@@ -88,7 +103,7 @@ $(function () {
 			communityCount++;
 		}
 	  $("#deck img:first-child").remove(); //removes card image
-		usedCards.push(temp);
+		usedCards.push(nextCard);
 	  console.log(deckOfCards.shift()); //removes card from array and logs removed card
 	}
 
