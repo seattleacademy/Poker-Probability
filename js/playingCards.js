@@ -2,12 +2,17 @@ $(function () {
 	var valueArray = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"];
 	var suitArray = ["♦","♥","♠","♣"];
   var cardBack = "images/card-back-sm";
-  var deckOfCards = [];
-	var usedCards = [];
+  var deckOfCards = []
+		, usedCards = []
+		, communityArray = [];
 	var cardsInDeck = 52;
-	var communityArray = [];
 	var communityCount = 0;
-	var yourHand = [];
+	var yourHand = []
+		, oppt1Hand = []
+		, oppt2Hand = []
+		, oppt3Hand = []
+		, oppt4Hand = []
+		, oppt5Hand = [];
 
 	//fills deck array with random cards and appends images
 	function init(){
@@ -21,7 +26,6 @@ $(function () {
 			}
 		}
 		shuffle(deckOfCards);
-		//dealCards();
 		//rules();
 	} //init() end
 
@@ -55,49 +59,62 @@ $(function () {
 		count++;
 	}*/
 
+	function placeCard(hand){
+		var i;
+
+		if(hand.length == 1)
+			i = 0;
+		else
+			i = 1;
+
+		var suit = hand[i].suit;
+		var value = hand[i].value;
+
+		switch(hand[i].suit){
+			case "♠":
+				$('.yourCardOne').html("<img src='images/classic-cards/1.png' alt='card'/>");
+				break;
+			case "♣":
+				break;
+			case "♥":
+				break;
+			case "♦":
+				break;
+			}
+		}
+
+		function initialDraw(){
+			if(oppt1Hand.length == oppt2Hand.length){
+				oppt1Hand.push({
+					suit:deckOfCards[0].suit,
+					value:deckOfCards[0].value
+				})
+				placeCard(oppt1Hand);
+			}
+		}
+
 	//draw a card
-	function drawCard(){
+	function dealCard(){
 		var nextCard = deckOfCards[0];
 		if(cardsInDeck === 0){
 			alert("The deck is empty!");
 			return;
 		}
-
 		cardsInDeck -= 1; //52 start
 		$("#cardCount").text(cardsInDeck); //changes text of number of cards left
 
-		function placeCard(yourHand){
-			var suit;
-			var value;
+		if(yourHand.length != 2)
+			initialDraw();
 
-			switch(yourHand[0].suit){
-				case "♠":
-					$('.yourCardOne').html("<img src='images/classic-cards/1.png' alt='card'/>");
-					break;
-				case "♣":
-					break;
-				case "♥":
-					break;
-				case "♦":
-					break;
-				}
-			}
-
-		if(yourHand.length != 2){
-			yourHand.push({
-				suit:deckOfCards[0].suit,
-				value:deckOfCards[0].value
-			})
-			console.log(yourHand[0]);
-			placeCard(yourHand);
-		}
 		//if community is not full and everyone has 2 cards, flop
-		if(yourHand.length == 2 && communityCount != 5){
+		else if(yourHand.length == 2 && communityCount <= 3){
 			for(var i = 0; i > 3; i++){
 				communityArray.push({
 					suit:deckOfCards[0].suit,
 					value:deckOfCards[0].value
 				});
+				deckOfCards.shift();
+				cardsInDeck -= 1;
 			}
 			//console.log("CA:" + communityArray[communityCount].value + communityArray[communityCount].suit); //alerts community cards
 			communityCount++;
@@ -128,6 +145,6 @@ $(function () {
 	$("#rules").on('click', rules);
 	$("#about").on('click', about);
 	$("#shuffle").on('click', shuffle);
-	$("#draw").on('click', drawCard);
+	$("#deal").on('click', dealCard);
 
 });
