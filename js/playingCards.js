@@ -3,15 +3,14 @@ $(function () {
 	var suitArray = ["♦","♥","♠","♣"];
   var cardBack = "images/card-back-sm";
   var deckOfCards = [];
-  var i, j;
 	var cardsInDeck = 52;
 	var communityArray = [];
 	var communityCount = 0;
 
 	//fills deck array with random cards and appends images
 	function init(){
-		for(j = 0; j <= suitArray.length-1; j++) {
-			for (i = 0; i <= valueArray.length-1; i++) {
+		for(var j = 0; j <= suitArray.length-1; j++) {
+			for (var i = 0; i <= valueArray.length-1; i++) {
 				deckOfCards.push({
 					value: valueArray[i],
 					suit: suitArray[j]
@@ -20,6 +19,8 @@ $(function () {
 			}
 		}
 		shuffle(deckOfCards);
+		//dealCards();
+		rules();
 	} //init() end
 
 	//shuffles the deck
@@ -29,6 +30,15 @@ $(function () {
 			x = deck[--i], deck[i] = deck[j], deck[j] = x);
 		return deck;
 	};
+
+		function dealCards(){
+			drawCard()
+		}
+
+		//resets the game
+		function reset(){
+
+		}
 
 	//first draw
 	function initialDraw(){
@@ -44,14 +54,10 @@ $(function () {
 		$('.cardSuit').text(deckOfCards[0].suit);
 	}
 
-	function setCard(){
-
-	}
-
 	//draw a card
 	function drawCard(){
 		if(cardsInDeck === 0){
-			Apprise("The deck is empty!");
+			alert("The deck is empty!");
 			return;
 		}
 		cardsInDeck -= 1; //52 start
@@ -67,8 +73,6 @@ $(function () {
 		}
 	  $("#deck img:first-child").remove(); //removes card image
 	  console.log(deckOfCards.shift()); //removes card from array and logs removed card
-
-
 	}
 
 	function rules(){
@@ -77,12 +81,15 @@ $(function () {
 								"Community Cards - cards in the middle<br>" +
 								"Hole Cards - cards for each player<br>" +
 								"Pre-Flop - <br>" +
-								"The Flop - Reveals 3 community cards<br>"
+								"The Flop - Reveals 3 community cards<br>" +
+								"The Turn - Reveal 4th community card<br>" +
+								"The River - Reveal the 5th and final community card<br>" +
+								"The Showdown - The final betting round."
 								;
-		Apprise(rules);
+		alert(rules);
 	}
 	function about(){
-	  Apprise("The goal of this website is to just calculate the probability of winning with each draw of a card. I created this as a side project for fun.");
+	  alert("The goal of this website is to just calculate the probability of winning with each draw of a card. I created this as a side project for fun.");
 	}
 
 	init();

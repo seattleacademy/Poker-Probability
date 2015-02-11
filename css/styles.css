@@ -23,7 +23,7 @@ span {
 .menu {
   float: right;
   font-size: 18px;
-  margin: -35px 20px;
+  margin: -35px 5px 0px 0px;
   font-weight: bold; }
   .menu span {
     color: #fff;
@@ -36,13 +36,25 @@ span {
 header {
   background-color: #1A2125; }
 
+#header-cont{
+  margin:0px 10px;
+}
+
+#phase {
+  float:left;
+  font-size: 18px;
+  margin: 10px 0px;
+  font-weight: bold;
+  color: #fff; }
+
 #site-title {
   font-family: otto;
   color: #F1F1F1;
   font-size: 40px;
   line-height: 52px;
   text-align: center;
-  height: 45px; }
+  height: 45px;
+  }
 
 .card {
   border: 1px solid black;
