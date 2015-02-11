@@ -3,9 +3,11 @@ $(function () {
 	var suitArray = ["♦","♥","♠","♣"];
   var cardBack = "images/card-back-sm";
   var deckOfCards = [];
+	var usedCards = [];
 	var cardsInDeck = 52;
 	var communityArray = [];
 	var communityCount = 0;
+	var yourHand = [];
 
 	//fills deck array with random cards and appends images
 	function init(){
@@ -32,7 +34,7 @@ $(function () {
 	};
 
 		function dealCards(){
-			drawCard()
+
 		}
 
 		//resets the game
@@ -40,9 +42,11 @@ $(function () {
 
 		}
 
-	//
-	function initialDraw(){
-		if(deckOfCards[0].suit === "♠" || deckOfCards[0].suit === "♣"){
+	/*
+	function placeValue(){
+		var count = 0;
+
+		if(usedCards[count].suit === "♠" || usedCards[count].suit === "♣"){
 		  $(".cardSuit").css('color', 'black');
 		  $(".cardValue").css('color', 'black');
 		}
@@ -50,28 +54,41 @@ $(function () {
 		  $(".cardSuit").css('color', '#cc0033');
 		  $(".cardValue").css('color', '#cc0033');
 		}
-		$('.cardValue').text(deckOfCards[0].value);
-		$('.cardSuit').text(deckOfCards[0].suit);
-	}
+		$('.cardValue').text(usedCards[count].value);
+		$('.cardSuit').text(usedCards[count].suit);
+		count++;
+	}*/
 
 	//draw a card
 	function drawCard(){
+		var temp = deckOfCards[0];
 		if(cardsInDeck === 0){
 			alert("The deck is empty!");
 			return;
 		}
+
 		cardsInDeck -= 1; //52 start
 		$("#cardCount").text(cardsInDeck); //changes text of number of cards left
 
-		if(communityCount != 5){  //if community is not full, add to community
-			communityArray.push({
+		if(yourHand.length != 2){
+			yourHand.push({
 				suit:deckOfCards[0].suit,
 				value:deckOfCards[0].value
-			});
+			})
+		}
+		//if community is not full and everyone has 2 cards, flop
+		if(yourHand.length == 2 && communityCount != 5){
+			for(var i = 0; i > 3; i++){
+				communityArray.push({
+					suit:deckOfCards[0].suit,
+					value:deckOfCards[0].value
+				});
+			}
 			//console.log("CA:" + communityArray[communityCount].value + communityArray[communityCount].suit); //alerts community cards
 			communityCount++;
 		}
 	  $("#deck img:first-child").remove(); //removes card image
+		usedCards.push(temp);
 	  console.log(deckOfCards.shift()); //removes card from array and logs removed card
 	}
 

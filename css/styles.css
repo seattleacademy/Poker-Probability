@@ -66,20 +66,14 @@ header {
   background-color: #fff;
   box-shadow: 5px 5px 5px #505050;
   border-radius: 5px;
-  cursor: default; }
+  cursor: default;
+  font-size:10px; }
   .card .back {
     content: url("../images/card-back2.jpg");
     margin: -5px 0 0 -5px; }
 
-.oppCardOne {
-  margin-right:;
-}
-
-.cardTop {
-  text-align: left; }
-
-.cardBottom {
-  text-align: right; }
+h3 {
+    margin: 10px 0px 5px; }
 
 .thirds {
   height: 33%;
